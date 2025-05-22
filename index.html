@@ -15,16 +15,18 @@ min-height: 100vh;
 margin: 0;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 .envelope {
 position: relative;
 width: 320px;
 height: 220px;
-background: #2f7a2f; /* green envelope */
+background: #2f7a2f;
 border-radius: 12px;
 box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 cursor: pointer;
 overflow: hidden;
 }
+
 .flap {
 position: absolute;
 top: 0;
@@ -37,9 +39,11 @@ transform-origin: top center;
 transition: transform 0.8s ease;
 z-index: 2;
 }
+
 .envelope.open .flap {
 transform: rotateX(-180deg);
 }
+
 .letter {
 position: absolute;
 top: 110px;
@@ -56,16 +60,42 @@ font-size: 1rem;
 line-height: 1.4;
 user-select: text;
 }
+
 .heart {
-color: #2f7a2f; /* green heart */
+color: #2f7a2f;
 font-size: 1.5rem;
 margin-top: 1rem;
 display: inline-block;
 animation: pulse 2s infinite;
 }
+
 @keyframes pulse {
 0%, 100% { transform: scale(1); }
 50% { transform: scale(1.2); }
+}
+
+.kissing-dinos {
+margin-top: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 20px;
+}
+
+.dino {
+width: 80px;
+height: 80px;
+fill: #2f7a2f;
+}
+
+.dino.left {
+transform: scaleX(-1);
+}
+
+.heart-icon {
+width: 32px;
+height: 32px;
+animation: pulse 2s infinite;
 }
 </style>
 </head>
@@ -80,6 +110,23 @@ animation: pulse 2s infinite;
 <p>You are the best thing that has ever happened to me and I can’t wait for the various experiences that we expect, happy anniversary my darling, I love you forever and always.</p>
 <p class="heart">❤️</p>
 </div>
+</div>
+
+<div class="kissing-dinos" aria-label="Two dinosaurs kissing">
+<!-- Left Dinosaur -->
+<svg class="dino left" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 48 L16 38 L24 34 L28 26 L32 24 L36 20 L40 16 L44 14 L48 12 L52 14 L54 18 L52 26 L48 30 L46 36 L42 40 L38 44 L32 48 L26 52 Z"/>
+</svg>
+
+<!-- Heart Between -->
+<svg class="heart-icon" viewBox="0 0 32 29.6" xmlns="http://www.w3.org/2000/svg">
+<path d="M23.6,0c-3.1,0-5.9,1.9-7.6,4.8C14.3,1.9,11.5,0,8.4,0C3.8,0,0,3.8,0,8.4c0,6.5,7.3,11.5,16,21.2c8.7-9.7,16-14.7,16-21.2 C32,3.8,28.2,0,23.6,0z" fill="#2f7a2f"/>
+</svg>
+
+<!-- Right Dinosaur -->
+<svg class="dino right" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 48 L16 38 L24 34 L28 26 L32 24 L36 20 L40 16 L44 14 L48 12 L52 14 L54 18 L52 26 L48 30 L46 36 L42 40 L38 44 L32 48 L26 52 Z"/>
+</svg>
 </div>
 
 <script>
